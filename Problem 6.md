@@ -6,23 +6,38 @@ Flow of Execution
 
 API Endpoints
 1. Update User Score
+
 URL: /api/score/update
+
 Method: POST
+
 Request Body:
+
 {
   "userId": "<string>",
   "scoreIncrement": "<number>"
 }
+
 Response:
+
 Status Code: 200 OK
+
 Content: { "message": "Score updated successfully" }
+
 Description: This endpoint allows authorized users to update their scores by submitting a POST request with their user ID and the amount by which they want to increase their score.
-2. Get Top 10 Users' Scores
+
+3. Get Top 10 Users' Scores
+
 URL: /api/score/top10
+
 Method: GET
+
 Response:
+
 Status Code: 200 OK
+
 Content:
+
 {
   "topScores": [
     { "userId": "<string>", "score": "<number>" },
@@ -30,7 +45,9 @@ Content:
     ...
   ]
 }
+
 Description: This endpoint retrieves the top 10 users' scores in descending order. Each entry in the response object contains the user ID and their corresponding score.
+
 Authorization
 To prevent malicious users from increasing scores without authorization, the Scoreboard API Service implements authentication and authorization mechanisms.
 
